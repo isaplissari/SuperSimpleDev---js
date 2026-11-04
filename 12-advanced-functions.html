@@ -18,7 +18,7 @@
             'make dinner',
             'wash dishes',
             'watch youtube'
-        ].forEach(function(value, index) {
+        ].forEach((value, index) => {
             if (value === 'wash dishes') {
                 return; // same thing as continue
             }
@@ -27,6 +27,22 @@
             console.log(value);
         }) // loop dentro da array (mesma coisa q o for loop)
 
+        //arrow functions
+        const oneParam = param => {
+            console.log(param + 1);
+        };
+        oneParam(2); // mesma coisa que:
+        const oneParam1 = function(n) {
+            console.log(n + 1);
+        }
+
+        // ou tambem
+        const oneLine = () => {
+            return 2 + 3
+        }
+        // é igual a 
+        const oneLineR = () => 2 + 3;
+        console.log(oneLineR()); // 5
         
 
     </script>
