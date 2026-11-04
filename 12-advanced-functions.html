@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <title>advanced functions</title>
+</head>
+<body>
+    <script>
+        /*
+        setTimeout(function() {
+            console.log('timeout');
+        }, 3000) // vai rodar a funcao depois de 3 segundos
+
+        setInterval(() => {
+            console.log('interval')
+        }, 3000); // vai rodar a funcao a cada 3 segundos
+*/ 
+
+        [
+            'make dinner',
+            'wash dishes',
+            'watch youtube'
+        ].forEach(function(value, index) {
+            if (value === 'wash dishes') {
+                return; // same thing as continue
+            }
+            
+            console.log(index);
+            console.log(value);
+        }) // loop dentro da array (mesma coisa q o for loop)
+
+        
+
+    </script>
+</body>
+</html>
