@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <button class="js-btn" onclick="updateBtn()">Start</button>
+
+<script>
+    // 12a
+    // const add = function() {
+    //     return (2 + 3);
+    // }
+
+    // console.log(add());
+
+    //12b
+    // const add = function() {
+    //     console.log(2 + 3);
+    //  }
+
+    // function runTwice(fun) {
+    //     fun();
+    //     fun();
+    // }
+
+    // runTwice(function() { console.log('12b') })
+    // runTwice(add);
+
+    //16c
+
+    function updateBtn() {
+        const button = document.querySelector('.js-btn');
+
+        setTimeout(() => {
+            button.innerHTML = 'Finished!'
+        }, 1000);
+    }
+    
+</script>
+</body>
+</html>
