@@ -8,22 +8,17 @@ const todoList = [
 renderTodoList();
 
 function renderTodoList() {
+  let todoListHTML = '';
 
-    let todoListHTML = ''; // save the inputs into the html by making p 
-
-    todoList.forEach(function(todoObject, index) {
-        const { name } = todoObject;
-        const { dueDate}  = todoObject;
-        const html = `
-            <div>${name}</div>
-            <div>${dueDate}</div>
-            <button
-                onclick="todoList.splice(${i}, 1);
-                renderTodoList()
-            " class="delete-todo-button">Delete</button> 
-        `;
-        todoListHTML += html; // generating the html
-    })
+  todoList.forEach((todoObject, index) => {
+    const { name, dueDate } = todoObject;
+    const html = `
+      <div>${name}</div>
+      <div>${dueDate}</div>
+      <button class="delete-todo-button js-delete-todo-button">Delete</button> 
+    `;
+    todoListHTML += html;
+  });
 
 //  loop - accumulator pattern
 //     for (let i = 0; i < todoList.length; i++) {

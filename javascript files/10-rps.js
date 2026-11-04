@@ -7,23 +7,6 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
       updateScoreEl();
 
-      let isAutoPlaying = false;
-      let intervalId;
-
-      function autoPlay() {
-        if (!isAutoPlaying) {
-          intervalId = setInterval(function() {
-            const playerMove = pickComputerMove();
-            playGame(playerMove);
-          }, 1000);
-          isAutoPlaying = true;
-        } else {
-          clearInterval(intervalId); // parar o autoplay
-          isAutoPlaying = false;
-        }
-        
-      }
-
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
 
@@ -73,8 +56,8 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
         document.querySelector('.js-moves').innerHTML =
          `You
-         <img src="${playerMove}-emoji.png" class="move-icon">
-         <img src="${computerMove}-emoji.png" class="move-icon">
+         <img src="images/${playerMove}-emoji.png" class="move-icon">
+         <img src="images/${computerMove}-emoji.png" class="move-icon">
          Computer`;
       }
 
