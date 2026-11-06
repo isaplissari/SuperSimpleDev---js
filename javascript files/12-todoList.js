@@ -10,15 +10,14 @@ renderTodoList();
 function renderTodoList() {
   let todoListHTML = '';
 
-  todoList.forEach(function(todoObject, index) {
+  todoList.forEach((todoObject, index) => {
     const { name, dueDate } = todoObject;
     const html = `
       <div>${name}</div>
       <div>${dueDate}</div>
-      <button onclick="
-        todoList.splice(${index}, 1);
-        renderTodoList();
-      " class="delete-todo-button">Delete</button> 
+      <button 
+      class="delete-todo-button js-delete-todo-btn"
+      >Delete</button> 
     `;
     todoListHTML += html;
 
@@ -26,7 +25,20 @@ function renderTodoList() {
 
   document.querySelector('.js-todolist')
     .innerHTML = todoListHTML;
-}
+
+  document.querySelectorAll('.js-delete-todo-btn')
+    .forEach((deleteBtn, index) => {
+        deleteBtn.addEventListener('click', () => {
+            todoList.splice(index, 1);
+            renderTodoList();
+        }); // delete the button that we want
+    });
+};
+
+document.querySelector('.js-add-todo-btn')
+    .addEventListener('click', () => {
+        addTodo();
+}); // make the add button work w/o the onclick
 
 function addTodo() {
   const inputElement = document.querySelector('.js-name-input');
